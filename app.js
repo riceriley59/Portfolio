@@ -64,13 +64,21 @@ let speed = 0.05;
 let radius = 100;
 
 setInterval(()=>{
-	middleX = window.innerWidth / 1.3;
-	middleY = window.innerHeight * 1.25;
-
+	//laptop dimensions
+	if(window.innerWidth > 1200 && window.innerWidth < 1600){
+		middleX = window.innerWidth / 1.8;
+		middleY = window.innerHeight * 1.8;
+	}
+	//desktop dimensions
+	else if(window.innerWidth > 1600){
+		middleX = window.innerWidth / 1.3;
+		middleY = window.innerHeight * 1.25;
+	}
+	
 	middle.style.left = middleX + 'px';
 	middle.style.top = middleY + 'px';
 
-	if(window.innerWidth > 1500){
+	if(window.innerWidth > 1200){
 		attr1.style.left = (Math.cos(theta1) * radius + middleX) + 'px';
 		attr1.style.top = (Math.sin(theta1) * radius + middleY) + 'px';
 
@@ -167,7 +175,7 @@ window.addEventListener('scroll', ()=>{
 	start.style.transform = 'translateX(' + -(value * 5) + 'px)';
 	scroll.style.transform = 'translateX(' + -(value * 5) + 'px)';
 
-	if(ready && window.innerWidth > 1500){
+	if(ready && window.innerWidth > 1200){
 		theta1 += speed;
 		attr1.style.left = (Math.cos(theta1) * radius + middleX) + 'px';
 		attr1.style.top = (Math.sin(theta1) * radius + middleY) + 'px';
