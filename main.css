@@ -675,12 +675,46 @@ section img#mountains_front{
 /* For Tablet View */
 @media screen and (min-device-width: 768px)
 	and (max-device-width: 1024px) {
+		#work .blog-box{
+			height: 40%;
+			border-radius: 15%;
+		}
 	
+		#work .blog-box .language{
+			width: 70px;
+			align-items: center;
+			padding-left: 10px;
+		}
+
+		.header{
+			margin-left: 180px;
+		}
+
+		#contact form button{
+			width: 45%;
+		}
 }
    
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
-	
+	#work .blog-box{
+		height: 40%;
+		border-radius: 15%;
+	}
+
+	#work .blog-box .language{
+		width: 70px;
+		align-items: center;
+		padding-left: 10px;
+	}
+
+	.header{
+		margin-left: 180px;
+	}
+
+	#contact form button{
+		width: 45%;
+	}
 }
 
 /* Laptop ----------- Non-Retina Screens ----------- */
