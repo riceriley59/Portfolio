@@ -1,0 +1,192 @@
+//opening animation and preloader code
+const logo = document.querySelector('.logo-header');
+const logoSpan = document.querySelectorAll(".logo");
+const start = document.getElementById('start-text');
+const loader = document.getElementById('preloader');
+const scrollind = document.querySelector('.scroll-down');
+const header = document.getElementById('showcase');
+const showcaselist = document.querySelector('.showcaselist');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+	setTimeout(()=>{
+		loader.style.display = "none";
+		scrollind.classList.add('active');
+		showcaselist.classList.add('active');
+	}, 400);
+
+	if(window.scrollY > 900){
+		header.classList.add('sticky');
+	}
+
+	setTimeout(()=>{
+		start.classList.add('active');
+	}, 900)
+
+	setTimeout(()=>{
+		start.classList.remove('active');
+		start.classList.add('appear');
+	}, 1000)
+
+	logoSpan.forEach((span, idx)=>{
+		setTimeout(()=>{
+			span.classList.add('active');
+		}, (idx + 1) * 300)
+	})
+});
+
+//parallax code
+const moon = document.getElementById('moon');
+const stars = document.getElementById('stars');
+const mountainsf = document.getElementById('mountains_front');
+const mountainsb = document.getElementById('mountains_behind');
+const scroll = document.getElementById('scroll-text');
+
+const middle = document.querySelector('.sun');
+const aboutlist = document.querySelector('.aboutlist');
+
+let middleX = window.innerWidth / 1.3;
+let middleY = window.innerHeight * 1.25;
+
+const attr1 = document.querySelector('.mercury');
+const attr2 = document.querySelector('.venus');
+const attr3 = document.querySelector('.mars');
+const attr4 = document.querySelector('.earth');
+
+const faders = document.querySelectorAll('.planet');
+const sliders = document.querySelectorAll('.slide-in');
+
+let theta1 = 0;
+let theta2 = 1.57;
+let theta3 = 3.14;
+let theta4 = 4.71;
+
+let speed = 0.05;
+let radius = 100;
+
+setInterval(()=>{
+	middleX = window.innerWidth / 1.3;
+	middleY = window.innerHeight * 1.25;
+
+	middle.style.left = middleX + 'px';
+	middle.style.top = middleY + 'px';
+
+	if(window.innerWidth > 1500){
+		attr1.style.left = (Math.cos(theta1) * radius + middleX) + 'px';
+		attr1.style.top = (Math.sin(theta1) * radius + middleY) + 'px';
+
+		attr2.style.left = (Math.cos(theta2) * radius + middleX) + 'px';
+		attr2.style.top = (Math.sin(theta2) * radius + middleY) + 'px';
+
+		attr3.style.left = (Math.cos(theta3) * radius + middleX) + 'px';
+		attr3.style.top = (Math.sin(theta3) * radius + middleY) + 'px';
+
+		attr4.style.left = (Math.cos(theta4) * radius + middleX) + 'px';
+		attr4.style.top = (Math.sin(theta4) * radius + middleY) + 'px';
+	}
+	else{
+		attr1.classList.remove('appear');
+		attr2.classList.remove('appear');
+		attr3.classList.remove('appear');
+		attr4.classList.remove('appear');
+	}
+}, 10);
+
+ready = false;
+
+const options = {
+	threshold: 0,
+	rootMargin: "0px 0px -125px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll)=>{
+	entries.forEach((entry, idx) => {
+		if(!entry.isIntersecting){
+			return;
+		} else {
+			setTimeout(()=>{
+				entry.target.classList.add('appear');
+			}, (idx + 1) * 200)
+			setTimeout(()=>{ready = true;}, 2000);
+			appearOnScroll.unobserve(entry.target);
+		}
+	})
+}, options);
+
+faders.forEach(fader =>{
+	appearOnScroll.observe(fader);
+});
+
+sliders.forEach(slider => {
+	appearOnScroll.observe(slider);
+});
+
+const home = document.querySelector('.select1');
+const about = document.querySelector('.select2');
+const work = document.querySelector('.select3');
+const contact = document.querySelector('.select4');
+
+
+window.addEventListener('scroll', ()=>{
+	let value = window.scrollY;
+
+	//sticky nav-bar
+	header.classList.toggle("sticky", value > 900);
+
+	if(value < 600){
+		home.classList.add("active");
+		about.classList.remove('active');
+		work.classList.remove('active');
+		contact.classList.remove('active');
+	}
+	else if(value > 600 && value < 1500){
+		home.classList.remove("active");
+		about.classList.add('active');
+		work.classList.remove('active');
+		contact.classList.remove('active');
+	}
+	else if(value < 3000 && value > 1500){
+		home.classList.remove("active");
+		about.classList.remove('active');
+		work.classList.add('active');
+		contact.classList.remove('active');
+	}
+	else if(value > 3000){
+		home.classList.remove("active");
+		about.classList.remove('active');
+		work.classList.remove('active');
+		contact.classList.add('active');
+	}
+
+
+	//other
+	scrollind.classList.add('fade');
+	stars.style.transform = 'translateX(' + (value * 0.25) + 'px)';
+	moon.style.transform = 'translateY(' + (value * 1.05) + 'px)';
+	mountainsb.style.transform = 'translateY('+ (value * 0.5) + 'px)';
+	mountainsf.style.transform = 'translateY(' + (value * 0.0) + 'px)';
+	start.style.transform = 'translateX(' + -(value * 5) + 'px)';
+	scroll.style.transform = 'translateX(' + -(value * 5) + 'px)';
+
+	if(ready && window.innerWidth > 1500){
+		theta1 += speed;
+		attr1.style.left = (Math.cos(theta1) * radius + middleX) + 'px';
+		attr1.style.top = (Math.sin(theta1) * radius + middleY) + 'px';
+
+		theta2 += speed;
+		attr2.style.left = (Math.cos(theta2) * radius + middleX) + 'px';
+		attr2.style.top = (Math.sin(theta2) * radius + middleY) + 'px';
+
+		theta3 += speed;
+		attr3.style.left = (Math.cos(theta3) * radius + middleX) + 'px';
+		attr3.style.top = (Math.sin(theta3) * radius + middleY) + 'px';
+
+		theta4 += speed;
+		attr4.style.left = (Math.cos(theta4) * radius + middleX) + 'px';
+		attr4.style.top = (Math.sin(theta4) * radius + middleY) + 'px';
+
+		attr1.classList.add('appear');
+		attr2.classList.add('appear');
+		attr3.classList.add('appear');
+		attr4.classList.add('appear');
+	}
+});
