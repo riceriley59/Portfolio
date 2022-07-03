@@ -14,10 +14,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		showcaselist.classList.add('active');
 	}, 400);
 
-	if(window.scrollY > 900){
-		header.classList.add('sticky');
-	}
-
 	setTimeout(()=>{
 		start.classList.add('active');
 	}, 900)
@@ -137,32 +133,62 @@ const contact = document.querySelector('.select4');
 window.addEventListener('scroll', ()=>{
 	let value = window.scrollY;
 
-	//sticky nav-bar
-	header.classList.toggle("sticky", value > 900);
+	//sticky and responsive nav-bar
+	if(window.innerWidth > 1600){
+		header.classList.toggle("sticky", value > 900);
 
-	if(value < 600){
-		home.classList.add("active");
-		about.classList.remove('active');
-		work.classList.remove('active');
-		contact.classList.remove('active');
+		if(value < 600){
+			home.classList.add("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 600 && value < 1500){
+			home.classList.remove("active");
+			about.classList.add('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value < 3000 && value > 1500){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.add('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 3000){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.add('active');
+		}
 	}
-	else if(value > 600 && value < 1500){
-		home.classList.remove("active");
-		about.classList.add('active');
-		work.classList.remove('active');
-		contact.classList.remove('active');
-	}
-	else if(value < 3000 && value > 1500){
-		home.classList.remove("active");
-		about.classList.remove('active');
-		work.classList.add('active');
-		contact.classList.remove('active');
-	}
-	else if(value > 3000){
-		home.classList.remove("active");
-		about.classList.remove('active');
-		work.classList.remove('active');
-		contact.classList.add('active');
+	else if(window.innerWidth > 1200 && window.innerWidth < 1600){
+		header.classList.toggle("sticky", value > 650);
+
+		if(value < 500){
+			home.classList.add("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 500 && value < 1400){
+			home.classList.remove("active");
+			about.classList.add('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value < 2900 && value > 1400){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.add('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 2900){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.add('active');
+		}
 	}
 
 
