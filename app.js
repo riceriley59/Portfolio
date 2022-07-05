@@ -190,7 +190,37 @@ window.addEventListener('scroll', ()=>{
 			contact.classList.add('active');
 		}
 	}
+	else if(window.innerWidth > 768 && window.innerWidth < 1024){
+		header.classList.toggle("sticky", value > 1000);
 
+		if(value < 1000){
+			home.classList.add("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 1000 && value < 1800){
+			home.classList.remove("active");
+			about.classList.add('active');
+			work.classList.remove('active');
+			contact.classList.remove('active');
+		}
+		else if(value < 3900 && value > 1800){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.add('active');
+			contact.classList.remove('active');
+		}
+		else if(value > 3900){
+			home.classList.remove("active");
+			about.classList.remove('active');
+			work.classList.remove('active');
+			contact.classList.add('active');
+		}
+	}
+	if(window.innerWidth < 640){
+		header.classList.toggle("sticky", value > 700);
+	}
 
 	//other
 	scrollind.classList.add('fade');

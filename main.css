@@ -494,6 +494,31 @@ section img#mountains_front{
 	transition: opacity 2s ease-in-out;
 }
 
+#work .work-list{
+	font-size: 1.2em;
+	color: #fff;
+	z-index: 100;
+	padding-left: 10px;
+	opacity: 0;
+	width: 90vw;
+	transition: opacity 2s ease-in-out;
+	margin-right: 0;
+}
+
+#work .work-list.appear{
+	opacity: 1;
+}
+
+#work .worktopper{
+	color: #7597de;
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+}
+
+#work .worktopper.appear{
+	opacity: 1;
+}
+
 #work .blog-text{
 	padding: 30px;
 	display: flex;
@@ -693,13 +718,26 @@ section img#mountains_front{
 		#contact form button{
 			width: 45%;
 		}
+		#work .work-list{
+			margin-right: 0;
+		}
+	
+		#work .worktopper{
+			margin-right: 0;
+		}
 }
    
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
+	*{
+		overflow-x: hidden;
+	}
+
 	#work .blog-box{
-		height: 40%;
+		height: 25%;
 		border-radius: 15%;
+		margin: 50px;
+		width: 75%;
 	}
 
 	#work .blog-box .language{
@@ -709,11 +747,59 @@ section img#mountains_front{
 	}
 
 	.header{
-		margin-left: 180px;
+		margin-left: 300px;
 	}
 
 	#contact form button{
 		width: 45%;
+	}
+
+	#contact .formcontainer{
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	#work .blog-container{
+		flex-wrap: wrap;
+	}
+	.contacttop{
+		font-size: 1.5em;
+	}
+	#contact{
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding-left: 5%;
+	}
+	#contact .imgcontainer{
+		float: none;
+		margin-top: none;
+		padding-right: 100px;
+		margin-bottom: 40px;
+	}
+
+	.end p{
+		padding-left: 35%;
+	}
+
+	#contact .mediaimg{
+		transform: translate(0);
+		opacity: 1;
+	}
+
+	#start-text{
+		font-size: 15vw;
+	}
+
+	#scroll-text{
+		font-size: 15vw;
+	}
+
+	#work .work-list{
+		margin-right: 0;
+	}
+
+	#work .worktopper{
+		margin-right: 0;
 	}
 }
 
