@@ -639,6 +639,16 @@ section img#mountains_front{
 	margin-bottom: 20px;
 }
 
+#contact form.disabled{
+	pointer-events: none;
+	opacity: 0.7;
+}
+
+#contact .formcontainer .status{
+	margin: 20px 0 0;
+    text-align: center;
+}
+
 #contact form input, #contact form textarea{
 	border: 0;
 	margin: 10px 0;
