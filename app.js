@@ -286,11 +286,16 @@ const showcaselinks = document.querySelectorAll('.showcaselist li');
 burger.addEventListener('click', ()=>{
 	showcaselist.classList.toggle('nav-active');
 
+
 	showcaselinks.forEach((link, index) => {
 		link.style.animation = 'navLinkFade 0.5s ease forwards ' + (index/7) + 's';
 	});
 
 	burger.classList.toggle('toggle');
+
+	if(window.scrollY < 700){
+		header.classList.toggle("sticky");
+	}
 });
 
 showcaselinks.forEach((link) =>{
