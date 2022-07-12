@@ -308,10 +308,10 @@ showcaselinks.forEach((link) =>{
 
 //Contact Form in PHP
 const form = document.querySelector("form"),
-statusTxt = form.querySelector("status");
+statusTxt = form.querySelector(".status span");
 form.onsubmit = (e)=>{
   e.preventDefault();
-  statusTxt.style.color = "#0D6EFD";
+  statusTxt.style.color = "#7597de";
   statusTxt.style.display = "block";
   statusTxt.innerText = "Sending your message...";
   form.classList.add("disabled");

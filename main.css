@@ -497,7 +497,7 @@ section img#mountains_front{
 
 #work .blog-box{
 	width: 25vw;
-	height: 35vh;
+	height: auto;
 	background-color: #e5e9f0;
 	border: 1px solid #ececec;
 	margin: 20px;
@@ -644,9 +644,10 @@ section img#mountains_front{
 	opacity: 0.7;
 }
 
-#contact .formcontainer .status{
+#contact .formcontainer .status span{
 	margin: 20px 0 0;
     text-align: center;
+	color: #7597de;
 }
 
 #contact form input, #contact form textarea{
