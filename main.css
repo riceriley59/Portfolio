@@ -771,6 +771,37 @@ section img#mountains_front{
 		#work .worktopper{
 			margin-right: 0;
 		}
+		#showcase .showcaselist{
+			position: absolute;
+			right: 0px;
+			height: 94vh;
+			top: 8vh;
+			background-color: #2b1055;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			opacity: 0;
+			transform: translateX(100%);
+			display: none;
+			transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+		}
+	
+		#showcase .showcaselist li{
+			margin-top: 75px;
+			display: flex;
+			opacity: 0;
+			z-index: 100000;
+		}
+	
+		#showcase .showcaselist.nav-active{
+			transform: translateX(0%);
+			display: flex;
+			opacity: 1;
+		}
+	
+		#showcase .burger{
+			display: block;
+		}	
 }
    
 /* For Mobile Phones Portrait or Landscape View */
@@ -857,21 +888,24 @@ section img#mountains_front{
 		height: 94vh;
 		top: 8vh;
 		background-color: #2b1055;
-		display: flex;
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
 		transform: translateX(100%);
+		display: none;
 		transition: transform 0.5s ease-in;
 	}
 
 	#showcase .showcaselist li{
 		margin-top: 75px;
+		display: flex;
 		opacity: 0;
+		z-index: 100000;
 	}
 
 	#showcase .showcaselist.nav-active{
 		transform: translateX(0%);
+		display: flex;
 	}
 
 	#showcase .burger{

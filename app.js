@@ -293,7 +293,10 @@ burger.addEventListener('click', ()=>{
 
 	burger.classList.toggle('toggle');
 
-	if(window.scrollY < 700){
+	if(window.scrollY < 1000 && window.innerWidth > 768 && window.innerWidth < 1024){
+		header.classList.toggle("sticky");
+	}
+	else if(window.scrollY < 700 && window.innerWidth < 640){
 		header.classList.toggle("sticky");
 	}
 });
