@@ -331,7 +331,7 @@ form.onsubmit = (e)=>{
           statusTxt.style.display = "none";
         }, 3000);
       }
-      statusTxt.innerText = response;
+      statusTxt.innerText = "Your Message Was Sent!";
       form.classList.remove("disabled");
     }
   }
