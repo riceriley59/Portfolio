@@ -309,6 +309,8 @@ showcaselinks.forEach((link) =>{
 });
 
 
+let reset = true;
+
 //Contact Form in PHP
 const form = document.querySelector("form"),
 statusTxt = form.querySelector(".status span");
@@ -325,14 +327,18 @@ form.onsubmit = (e)=>{
       let response = xhr.response;
       if(response.indexOf("required") != -1 || response.indexOf("valid") != -1 || response.indexOf("failed") != -1){
         statusTxt.style.color = "red";
+		statusTxt.innerText = "Your Message Failed To Send";
+		reset = false;
       }else{
         form.reset();
         setTimeout(()=>{
           statusTxt.style.display = "none";
         }, 3000);
       }
-      statusTxt.innerText = "Your Message Was Sent!";
-      form.classList.remove("disabled");
+	  if(reset){
+      	statusTxt.innerText = "Your Message Was Sent!";
+	  }
+		form.classList.remove("disabled");
     }
   }
   let formData = new FormData(form);
