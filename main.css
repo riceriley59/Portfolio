@@ -698,16 +698,6 @@ section img#mountains_front{
 	transition: transform 0.5s ease-in, opacity 2s ease-in;
 }
 
-#contact .captcha{
-	margin-left: 10px;
-	opacity: 0;
-}
-
-#contact .captcha.active{
-	opacity: 1;
-	transition: opacity 1s ease-in-out;
-}
-
 #contact .mediaimg.appear{
 	transform: translateY(0);
 	opacity: 1;
