@@ -501,7 +501,7 @@ section img#mountains_front{
 	background-color: #e5e9f0;
 	border: 1px solid #ececec;
 	margin: 20px;
-	border-radius: 10%;
+	border-radius: 10px;
 	opacity: 0;
 	transition: opacity 2s ease-in-out;
 }
@@ -806,9 +806,6 @@ section img#mountains_front{
    
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
-	*{
-		overflow-x: clip;
-	}
 	body{
 		overflow-x: hidden;
 	}
@@ -824,6 +821,7 @@ section img#mountains_front{
 		width: 70px;
 		align-items: center;
 		padding-left: 10px;
+		border-radius: 6px;
 	}
 
 	.header{
@@ -887,30 +885,68 @@ section img#mountains_front{
 		right: 0px;
 		height: 94vh;
 		top: 8vh;
-		background-color: #2b1055;
+		background-color: #2e3440;
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
 		transform: translateX(100%);
+		transition: transform 0.5s ease-in, opacity 0.5s ease-in, display 0.5s ease-in;
+		z-index: 10000;
+		opacity: 0;
 		display: none;
-		transition: transform 0.5s ease-in;
 	}
 
 	#showcase .showcaselist li{
-		margin-top: 75px;
-		display: flex;
+		margin-top: 25px;
 		opacity: 0;
-		z-index: 100000;
 	}
 
 	#showcase .showcaselist.nav-active{
 		transform: translateX(0%);
+		opacity: 1;
 		display: flex;
 	}
 
 	#showcase .burger{
 		display: block;
 		cursor: pointer;
+	}
+
+	#about h2{
+		font-size: 2.2em;
+	}
+
+	#about .aboutintro{
+		font-size: 1em;
+	}
+
+	#about .aboutlist{
+		font-size: 1em;
+	}
+	#about .skill-list{
+		font-size: 1em;
+		margin-bottom: 10px;
+	}
+
+	#work h2{
+		font-size: 2.2em;
+		margin-bottom: 0;
+	}
+
+	#work .work-list{
+		font-size: 1em;
+	}
+
+	#work .blog-text{
+		font-size: 1em;
+	}
+
+	#work .blog-title{
+		font-size: 1em;
+	}
+
+	.contacttop{
+		font-size: 1.7em;
 	}
 }
 
