@@ -435,10 +435,11 @@ section img#mountains_front{
 
 .header{
 	font-size: 3.5em;
-	margin-bottom: 10px;
+	margin-bottom: 50px;
 	color: #fff;
 	background: #1c0522;
-	padding: 100px;
+	padding-left: 60px;
+	padding-top: 150px;
 	transition: color 1s ease-in;
 	margin-right: 80vw;
 }
