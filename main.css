@@ -477,6 +477,10 @@ section img#mountains_front{
 	border-radius: 4px;
 }
 
+#work .language{
+	display: inline-block;
+}
+
 #work .blog-heading{
 	display: flex;
 	justify-content: center;
@@ -626,7 +630,9 @@ section img#mountains_front{
 
 #contact .image{
 	background: #1c0522;
+	width: 60%;
 	padding-left: 10vw;
+	padding-bottom: 10px;
 	opacity: 0;
 	transition: opacity 1.5s ease-in;
 }
@@ -684,7 +690,7 @@ section img#mountains_front{
 
 #contact .media{
 	margin: 11px;
-	padding-left: 10vw;
+	padding-left: 11.5vw;
 }
 
 #contact .media a{
