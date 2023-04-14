@@ -68,7 +68,7 @@ setInterval(()=>{
 	//desktop dimensions
 	else if(window.innerWidth > 1600){
 		middleX = window.innerWidth / 1.3;
-		middleY = window.innerHeight * 1.25;
+		middleY = window.innerHeight * 1.6;
 	}
 	
 	middle.style.left = middleX + 'px';
