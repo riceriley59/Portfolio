@@ -690,7 +690,7 @@ section img#mountains_front{
 
 #contact .media{
 	margin: 11px;
-	padding-left: 10vw;
+	padding-left: 11.5vw;
 }
 
 #contact .media a{
@@ -971,11 +971,6 @@ section img#mountains_front{
 		width: 70px;
 		padding-left: 10px;
 	}
-
-	#contact .media{
-		margin: 11px;
-		padding-left: 11.5vw;
-	}
 }
 
 /* Laptop ----------- Retina Screens ----------- */
@@ -992,10 +987,5 @@ section img#mountains_front{
 		width: 70px;
 		align-items: center;
 		padding-left: 10px;
-	}
-
-	#contact .media{
-		margin: 11px;
-		padding-left: 11.5vw;
 	}
 }

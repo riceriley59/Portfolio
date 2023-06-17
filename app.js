@@ -63,7 +63,7 @@ setInterval(()=>{
 	//laptop dimensions
 	if(window.innerWidth > 1200 && window.innerWidth < 1600){
 		middleX = window.innerWidth / 1.8;
-		middleY = window.innerHeight * 1.8;
+		middleY = window.innerHeight * 1.95;
 	}
 	//desktop dimensions
 	else if(window.innerWidth > 1600){
